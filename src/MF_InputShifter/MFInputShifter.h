@@ -9,7 +9,7 @@
 #include <Arduino.h>
 
 extern "C" {
-typedef void (*inputShifterEvent)(byte, uint8_t, const char *);
+typedef void (*inputShifterEvent)(byte, uint8_t, uint8_t, const char *);
 };
 
 enum {
@@ -22,7 +22,7 @@ class MFInputShifter
 public:
     MFInputShifter();
     static void attachHandler(inputShifterEvent newHandler);
-    bool        attach(uint8_t latchPin, uint8_t clockPin, uint8_t dataPin, uint8_t moduleCount, const char *name);
+    bool        attach(uint8_t latchPin, uint8_t clockPin, uint8_t dataPin, uint8_t moduleCount, uint8_t index, const char *name);
     void        detach();
     void        update();
     void        triggerOnPress();
@@ -37,6 +37,7 @@ private:
     uint8_t     _clockPin;    // CLK (clock) pin
     uint8_t     _dataPin;     // SDO (data) pin
     uint8_t     _moduleCount; // Number of 8 bit modules in series.
+    uint8_t     _index;
     bool        _initialized = false;
     uint8_t    *_lastState;
 

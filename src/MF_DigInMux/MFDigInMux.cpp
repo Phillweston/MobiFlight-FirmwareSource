@@ -33,10 +33,11 @@ void MFDigInMux::setMux(MFMuxDriver *MUX)
 }
 
 // Registers a new MUX input block and configures the driver pins
-void MFDigInMux::attach(uint8_t dataPin, bool halfSize, char const *name)
+void MFDigInMux::attach(uint8_t dataPin, bool halfSize, uint8_t index, char const *name)
 {
     // if(!_MUX) return;     // no need to check, the object can be set up in advance before the MUX is configured
     _dataPin = dataPin;
+    _index   = index;
     _name    = name;
     _flags   = 0x00;
     if (halfSize) bitSet(_flags, MUX_HALFSIZE);
@@ -139,7 +140,7 @@ void MFDigInMux::trigger(uint8_t channel, bool state)
 {
     if (!_MUX) return;
     if (!_inputHandler) return;
-    (*_inputHandler)((state ? MuxDigInOnRelease : MuxDigInOnPress), channel, _name);
+    (*_inputHandler)((state ? MuxDigInOnRelease : MuxDigInOnPress), _index, channel, _name);
 }
 
 // Attaches a new event handler for the specified event.

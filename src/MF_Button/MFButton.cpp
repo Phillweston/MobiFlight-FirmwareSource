@@ -47,7 +47,7 @@ void MFButton::triggerOnPress()
     if (!_initialized)
         return;
     if (_inputHandler && _state == LOW) {
-        (*_inputHandler)(btnOnPress, _name);
+        (*_inputHandler)(btnOnPress, _pin, _name);
     }
 }
 
@@ -56,7 +56,7 @@ void MFButton::triggerOnRelease()
     if (!_initialized)
         return;
     if (_inputHandler && _state == HIGH) {
-        (*_inputHandler)(btnOnRelease, _name);
+        (*_inputHandler)(btnOnRelease, _pin, _name);
     }
 }
 

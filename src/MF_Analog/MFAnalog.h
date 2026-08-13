@@ -16,7 +16,7 @@
 
 extern "C" {
 // callback functions
-typedef void (*analogEvent)(int, const char *);
+typedef void (*analogEvent)(int, uint8_t, uint8_t, const char *);
 };
 
 /////////////////////////////////////////////////////////////////////
@@ -26,12 +26,13 @@ class MFAnalog
 public:
     MFAnalog();
     static void attachHandler(analogEvent handler);
-    void        attach(uint8_t pin, const char *name, uint8_t sensitivity, bool deprecated);
+    void        attach(uint8_t pin, uint8_t index, const char *name, uint8_t sensitivity, bool deprecated);
     void        update();
     void        retrigger();
     void        readBuffer();
     const char *_name;
     uint8_t     _pin;
+    uint8_t     _index;
 
 private:
     static analogEvent _handler;

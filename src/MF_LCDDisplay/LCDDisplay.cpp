@@ -8,6 +8,7 @@
 #include "allocateMem.h"
 #include "MFLCDDisplay.h"
 #include "LCDDisplay.h"
+#include "I2CBridge.h"
 
 namespace LCDDisplay
 {
@@ -55,6 +56,7 @@ namespace LCDDisplay
         char *output  = cmdMessenger.readStringArg();
         cmdMessenger.unescape(output);
         lcd_I2C[address].display(output);
+        I2CBridge::sendTextChunks(I2CBridge::kLcdText, static_cast<uint8_t>(address), NULL, 0, output);
     }
 
     void PowerSave(bool state)

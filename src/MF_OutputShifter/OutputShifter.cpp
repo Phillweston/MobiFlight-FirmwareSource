@@ -5,9 +5,11 @@
 //
 
 #include "commandmessenger.h"
+#include <string.h>
 #include "allocateMem.h"
 #include "MFOutputShifter.h"
 #include "OutputShifter.h"
+#include "I2CBridge.h"
 
 namespace OutputShifter
 {
@@ -56,16 +58,30 @@ namespace OutputShifter
 
     void OnSet()
     {
-        int     module                      = cmdMessenger.readInt16Arg();
-        int     number_of_submodules        = cmdMessenger.readInt16Arg();
-        int     value                       = cmdMessenger.readInt16Arg();
+        int module               = cmdMessenger.readInt16Arg();
+        int number_of_submodules = cmdMessenger.readInt16Arg();
+        int value                = cmdMessenger.readInt16Arg();
+
+        if (number_of_submodules <= 0 || number_of_submodules > 24)
+            return;
+
         uint8_t _pins[number_of_submodules] = {0};
 
         for (uint8_t i = number_of_submodules; i != 0; i--) {
             _pins[i-1] = (uint8_t)cmdMessenger.readInt16Arg();
         }
 
+        if (module < 0 || module >= outputShifterRegistered)
+            return;
+
         outputShifter[module].setPins(_pins, value);
+
+        uint8_t payload[27];
+        payload[0] = static_cast<uint8_t>(module);
+        payload[1] = static_cast<uint8_t>(value);
+        payload[2] = static_cast<uint8_t>(number_of_submodules);
+        memcpy(&payload[3], _pins, number_of_submodules);
+        I2CBridge::send(I2CBridge::kOutputShifter, payload, number_of_submodules + 3);
     }
 
     void PowerSave(bool state)

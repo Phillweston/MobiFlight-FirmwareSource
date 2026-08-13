@@ -9,6 +9,7 @@
 #include "allocateMem.h"
 #include "MFDigInMux.h"
 #include "MFMuxDriver.h"
+#include "I2CBridge.h"
 
 extern MFMuxDriver MUX;
 
@@ -18,10 +19,11 @@ namespace DigInMux
     uint8_t     digInMuxRegistered = 0;
     uint8_t     maxDigInMux        = 0;
 
-    void handlerOnDigInMux(uint8_t eventId, uint8_t channel, const char *name)
+    void handlerOnDigInMux(uint8_t eventId, uint8_t module, uint8_t channel, const char *name)
     {
         if (!getBoardReady())
             return;
+        I2CBridge::sendModuleBinary(I2CBridge::kInputMux, module, channel, eventId == MuxDigInOnPress);
         cmdMessenger.sendCmdStart(kDigInMuxChange);
         cmdMessenger.sendCmdArg(name);
         cmdMessenger.sendCmdArg(channel);
@@ -44,7 +46,7 @@ namespace DigInMux
         if (digInMuxRegistered == maxDigInMux)
             return;
         new (&digInMux[digInMuxRegistered]) MFDigInMux(&MUX, name);
-        digInMux[digInMuxRegistered].attach(dataPin, (nRegs == 1), name);
+        digInMux[digInMuxRegistered].attach(dataPin, (nRegs == 1), digInMuxRegistered, name);
         MFDigInMux::attachHandler(handlerOnDigInMux);
         digInMuxRegistered++;
 

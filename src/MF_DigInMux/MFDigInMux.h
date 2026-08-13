@@ -10,7 +10,7 @@
 #include "MFMuxDriver.h"
 
 extern "C" {
-typedef void (*MuxDigInEvent)(byte, uint8_t, const char *);
+typedef void (*MuxDigInEvent)(byte, uint8_t, uint8_t, const char *);
 };
 
 enum {
@@ -26,7 +26,7 @@ public:
     static void setMux(MFMuxDriver *MUX);
     static void attachHandler(MuxDigInEvent newHandler);
 
-    void     attach(uint8_t dataPin, bool halfSize, char const *name);
+    void     attach(uint8_t dataPin, bool halfSize, uint8_t index, char const *name);
     void     detach();
     void     clear();
     void     retrigger();
@@ -46,6 +46,7 @@ private:
 
     const char *_name;
     uint8_t     _dataPin; // Data pin - MUX common, input to AVR
+    uint8_t     _index;
     uint8_t     _flags;
     uint16_t    _lastState;
 

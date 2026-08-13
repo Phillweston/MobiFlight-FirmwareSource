@@ -8,6 +8,7 @@
 #include "config.h"
 #include "allocateMem.h"
 #include "commandmessenger.h"
+#include "I2CBridge.h"
 #include "Button.h"
 #include "Encoder.h"
 #include "MFEEPROM.h"
@@ -170,6 +171,7 @@ void ResetBoard()
 void setup()
 {
     Serial.begin(115200);
+    I2CBridge::begin();
     MFeeprom.init();
     attachCommandCallbacks();
     cmdMessenger.printLfCr();

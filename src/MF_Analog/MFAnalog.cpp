@@ -13,10 +13,11 @@ MFAnalog::MFAnalog()
     _initialized = false;
 }
 
-void MFAnalog::attach(uint8_t pin, const char *name, uint8_t sensitivity, bool deprecated)
+void MFAnalog::attach(uint8_t pin, uint8_t index, const char *name, uint8_t sensitivity, bool deprecated)
 {
     _sensitivity = sensitivity;
     _pin         = pin;
+    _index       = index;
     _name        = name;
 #ifdef ARDUINO_AVR_PROMICRO16
     // ProMicro has a special pin assignment for analog pins
@@ -55,7 +56,7 @@ void MFAnalog::readChannel(uint8_t alwaysTrigger)
     if (alwaysTrigger || valueHasChanged(newValue)) {
         _lastValue = newValue;
         if (_handler != NULL) {
-            (*_handler)(_lastValue, _name);
+            (*_handler)(_lastValue, _index, _pin, _name);
         }
     }
 }

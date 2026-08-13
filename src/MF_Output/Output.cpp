@@ -8,6 +8,7 @@
 #include "allocateMem.h"
 #include "MFOutput.h"
 #include "Output.h"
+#include "I2CBridge.h"
 
 namespace Output
 {
@@ -52,7 +53,11 @@ namespace Output
         int output = cmdMessenger.readInt16Arg();
         int state  = cmdMessenger.readInt16Arg();
 
+        if (output < 0 || output >= outputsRegistered)
+            return;
+
         outputs[output].set(state);
+        I2CBridge::sendBinary(I2CBridge::kOutput, outputs[output].pin(), state != 0);
     }
 
     void PowerSave(bool state)

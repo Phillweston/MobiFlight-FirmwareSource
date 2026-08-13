@@ -9,6 +9,7 @@
 #include "allocateMem.h"
 #include "MFInputShifter.h"
 #include "InputShifter.h"
+#include "I2CBridge.h"
 
 namespace InputShifter
 {
@@ -16,10 +17,11 @@ namespace InputShifter
     uint8_t         inputShifterRegistered = 0;
     uint8_t         maxInputShifter        = 0;
 
-    void handlerInputShifterOnChange(uint8_t eventId, uint8_t pin, const char *name)
+    void handlerInputShifterOnChange(uint8_t eventId, uint8_t module, uint8_t pin, const char *name)
     {
         if (!getBoardReady())
             return;
+        I2CBridge::sendModuleBinary(I2CBridge::kInputShifter, module, pin, eventId == inputShifterOnPress);
         cmdMessenger.sendCmdStart(kInputShifterChange);
         cmdMessenger.sendCmdArg(name);
         cmdMessenger.sendCmdArg(pin);
@@ -43,7 +45,7 @@ namespace InputShifter
             return;
 
         new (&inputShifter[inputShifterRegistered]) MFInputShifter();
-        if (!inputShifter[inputShifterRegistered].attach(latchPin, clockPin, dataPin, modules, name)) {
+        if (!inputShifter[inputShifterRegistered].attach(latchPin, clockPin, dataPin, modules, inputShifterRegistered, name)) {
             cmdMessenger.sendCmd(kStatus, F("InputShifter array does not fit into Memory"));
             return;
         }

@@ -8,6 +8,7 @@
 #include "allocateMem.h"
 #include "MFSegments.h"
 #include "LedSegment.h"
+#include "I2CBridge.h"
 
 namespace LedSegment
 {
@@ -67,6 +68,12 @@ namespace LedSegment
         int subModule  = cmdMessenger.readInt16Arg();
         int brightness = cmdMessenger.readInt16Arg();
         ledSegments[module].setBrightness(subModule, brightness);
+        const uint8_t payload[] = {
+            static_cast<uint8_t>(module),
+            static_cast<uint8_t>(subModule),
+            static_cast<uint8_t>(brightness),
+        };
+        I2CBridge::send(I2CBridge::kSegmentBrightness, payload, sizeof(payload));
     }
 
     void OnSetModule()
@@ -77,6 +84,12 @@ namespace LedSegment
         uint8_t points    = (uint8_t)cmdMessenger.readInt16Arg();
         uint8_t mask      = (uint8_t)cmdMessenger.readInt16Arg();
         ledSegments[module].display(subModule, value, points, mask);
+        const uint8_t metadata[] = {
+            static_cast<uint8_t>(subModule),
+            points,
+            mask,
+        };
+        I2CBridge::sendTextChunks(I2CBridge::kSegmentDisplay, static_cast<uint8_t>(module), metadata, sizeof(metadata), value);
     }
 
     void OnSetModuleBrightness()
@@ -85,6 +98,12 @@ namespace LedSegment
         int subModule  = cmdMessenger.readInt16Arg();
         int brightness = cmdMessenger.readInt16Arg();
         ledSegments[module].setBrightness(subModule, brightness);
+        const uint8_t payload[] = {
+            static_cast<uint8_t>(module),
+            static_cast<uint8_t>(subModule),
+            static_cast<uint8_t>(brightness),
+        };
+        I2CBridge::send(I2CBridge::kSegmentBrightness, payload, sizeof(payload));
     }
 
     void OnSetModuleSingleSegment()
@@ -98,6 +117,8 @@ namespace LedSegment
         while (pinTokens != 0) {
             uint8_t num = (uint8_t)atoi(pinTokens);
             ledSegments[module].setSingleSegment(subModule, num, on_off);
+            const uint8_t payload[] = {module, subModule, num, on_off};
+            I2CBridge::send(I2CBridge::kSegmentSingle, payload, sizeof(payload));
             pinTokens = strtok(0, "|");
         }
     }

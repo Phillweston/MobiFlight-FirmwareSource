@@ -9,6 +9,7 @@
 #include "allocateMem.h"
 #include "MFAnalog.h"
 #include "Analog.h"
+#include "I2CBridge.h"
 
 #ifdef MF_ANALOG_SUPPORT
 namespace Analog
@@ -17,10 +18,11 @@ namespace Analog
     uint8_t   analogRegistered = 0;
     uint8_t   maxAnalogIn      = 0;
 
-    void handlerOnAnalogChange(int value, const char *name)
+    void handlerOnAnalogChange(int value, uint8_t module, uint8_t pin, const char *name)
     {
         if (!getBoardReady())
             return;
+        I2CBridge::sendAnalog(module, pin, static_cast<uint16_t>(value));
         cmdMessenger.sendCmdStart(kAnalogChange);
         cmdMessenger.sendCmdArg(name);
         cmdMessenger.sendCmdArg(value);
@@ -43,7 +45,7 @@ namespace Analog
             return;
 
         new (&analog[analogRegistered]) MFAnalog();
-        analog[analogRegistered].attach(pin, name, sensitivity, deprecated);
+        analog[analogRegistered].attach(pin, analogRegistered, name, sensitivity, deprecated);
         MFAnalog::attachHandler(handlerOnAnalogChange);
         analogRegistered++;
 #ifdef DEBUG2CMDMESSENGER

@@ -9,6 +9,7 @@
 #include "allocateMem.h"
 #include "MFButton.h"
 #include "Button.h"
+#include "I2CBridge.h"
 
 namespace Button
 {
@@ -16,10 +17,11 @@ namespace Button
     uint8_t   buttonsRegistered = 0;
     uint8_t   maxButtons        = 0;
 
-    void handlerButtonOnChange(uint8_t eventId, const char *name)
+    void handlerButtonOnChange(uint8_t eventId, uint8_t pin, const char *name)
     {
         if (!getBoardReady())
             return;
+        I2CBridge::sendBinary(I2CBridge::kButton, pin, eventId == btnOnPress);
         cmdMessenger.sendCmdStart(kButtonChange);
         cmdMessenger.sendCmdArg(name);
         cmdMessenger.sendCmdArg(eventId);

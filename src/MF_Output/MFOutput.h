@@ -22,6 +22,7 @@ public:
     void attach(uint8_t pin);
     void set(uint8_t value);
     void powerSavingMode(bool state);
+    uint8_t pin() const;
 
 private:
     uint8_t _pin;

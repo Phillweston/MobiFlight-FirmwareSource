@@ -33,6 +33,11 @@ void MFOutput::set(uint8_t value)
         analogWrite(_pin, _value);
 }
 
+uint8_t MFOutput::pin() const
+{
+    return _pin;
+}
+
 void MFOutput::powerSavingMode(bool state)
 {
     if (state)
