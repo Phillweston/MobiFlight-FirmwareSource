@@ -1,0 +1,50 @@
+substitutions:
+  device_name: a320-ovhd-cores3
+  friendly_name: A320 OVHD CoreS3
+
+esphome:
+  name: ${device_name}
+  friendly_name: ${friendly_name}
+  min_version: 2026.7.0
+
+esp32:
+  board: m5stack-cores3
+  framework:
+    type: arduino
+
+external_components:
+  - source:
+      type: local
+      path: components
+    components: [mobiflight_bridge]
+
+logger:
+  level: INFO
+
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ap:
+    ssid: "A320 OVHD Setup"
+    password: !secret fallback_ap_password
+    ap_timeout: 0s
+
+captive_portal:
+improv_serial:
+
+web_server:
+  port: 80
+  version: 3
+  sorting_groups:
+    - id: diagnostics
+      name: Diagnostics
+      sorting_weight: 100
+
+packages:
+  entities: !include entities.generated.yaml

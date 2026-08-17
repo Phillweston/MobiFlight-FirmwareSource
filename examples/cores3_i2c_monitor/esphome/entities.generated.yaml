@@ -1,0 +1,1768 @@
+# Generated from FENIX A320 OVHD V1_0_2.mfproj. Do not edit.
+mobiflight_bridge:
+  id: a320_bridge
+  sda_pin: 2
+  scl_pin: 1
+  address: 0x42
+  analog_raw_max: 1023
+  segment_module: 0
+  setup_ap_password: !secret fallback_ap_password
+  bat1_display:
+    name: BAT1 Display
+    id: bat1_display
+  bat2_display:
+    name: BAT2 Display
+    id: bat2_display
+  digital_inputs:
+    - name: "EXT LT STROBE ON"
+      id: input_ext_lt_strobe_on_shifter_apu_5
+      event_type: 0x03
+      module: 1
+      channel: 5
+      press_only: false
+    - name: "EXT LT STROBE OFF"
+      id: input_ext_lt_strobe_off_shifter_apu_6
+      event_type: 0x03
+      module: 1
+      channel: 6
+      press_only: false
+    - name: "EXT LT BEACON ON"
+      id: input_ext_lt_beacon_on_shifter_apu_27
+      event_type: 0x03
+      module: 1
+      channel: 27
+      press_only: true
+    - name: "EXT LT BEACON OFF"
+      id: input_ext_lt_beacon_off_shifter_apu_26
+      event_type: 0x03
+      module: 1
+      channel: 26
+      press_only: true
+    - name: "EXT LT WING ON"
+      id: input_ext_lt_wing_on_shifter_apu_23
+      event_type: 0x03
+      module: 1
+      channel: 23
+      press_only: true
+    - name: "ADIRS IR2"
+      id: input_adirs_ir2_shifter_left_2
+      event_type: 0x03
+      module: 3
+      channel: 2
+      press_only: false
+    - name: "EXT LT WING OFF"
+      id: input_ext_lt_wing_off_shifter_apu_12
+      event_type: 0x03
+      module: 1
+      channel: 12
+      press_only: true
+    - name: "EXT LT NAV&LOGO NAV"
+      id: input_ext_lt_nav_logo_nav_shifter_apu_29
+      event_type: 0x03
+      module: 1
+      channel: 29
+      press_only: false
+    - name: "EXT LT NAV&LOGO OFF"
+      id: input_ext_lt_nav_logo_off_shifter_apu_30
+      event_type: 0x03
+      module: 1
+      channel: 30
+      press_only: false
+    - name: "EXT LT RWTTURNOFF ON"
+      id: input_ext_lt_rwtturnoff_on_shifter_apu_15
+      event_type: 0x03
+      module: 1
+      channel: 15
+      press_only: true
+    - name: "EXT LT RWTTURNOFF OFF"
+      id: input_ext_lt_rwtturnoff_off_shifter_apu_4
+      event_type: 0x03
+      module: 1
+      channel: 4
+      press_only: true
+    - name: "EXT LT LAND L ON"
+      id: input_ext_lt_land_l_on_shifter_apu_13
+      event_type: 0x03
+      module: 1
+      channel: 13
+      press_only: false
+    - name: "EXT LT LAND R ON"
+      id: input_ext_lt_land_r_on_shifter_apu_21
+      event_type: 0x03
+      module: 1
+      channel: 21
+      press_only: false
+    - name: "EXT LT LAND L RETRACT"
+      id: input_ext_lt_land_l_retract_shifter_apu_14
+      event_type: 0x03
+      module: 1
+      channel: 14
+      press_only: false
+    - name: "EXT LT LAND  R RETRACT"
+      id: input_ext_lt_land_r_retract_shifter_apu_22
+      event_type: 0x03
+      module: 1
+      channel: 22
+      press_only: false
+    - name: "EXT LT NOSE TO"
+      id: input_ext_lt_nose_to_shifter_apu_20
+      event_type: 0x03
+      module: 1
+      channel: 20
+      press_only: false
+    - name: "EXT LT NOSE OFF"
+      id: input_ext_lt_nose_off_shifter_apu_31
+      event_type: 0x03
+      module: 1
+      channel: 31
+      press_only: false
+    - name: "ELEC EXRPWR"
+      id: input_elec_exrpwr_inputshifter_22
+      event_type: 0x03
+      module: 0
+      channel: 22
+      press_only: false
+    - name: "FIRETEST ENG1"
+      id: input_firetest_eng1_multiplexer_1
+      event_type: 0x04
+      module: 0
+      channel: 1
+      press_only: false
+    - name: "FIRETEST ENG2"
+      id: input_firetest_eng2_multiplexer_12
+      event_type: 0x04
+      module: 0
+      channel: 12
+      press_only: false
+    - name: "FIRETEST APU"
+      id: input_firetest_apu_multiplexer_9
+      event_type: 0x04
+      module: 0
+      channel: 9
+      press_only: false
+    - name: "APU MASTER"
+      id: input_apu_master_shifter_apu_2_27
+      event_type: 0x03
+      module: 2
+      channel: 27
+      press_only: false
+    - name: "APU START"
+      id: input_apu_start_shifter_apu_2_13
+      event_type: 0x03
+      module: 2
+      channel: 13
+      press_only: false
+    - name: "INTLT STBYCOMPASS ON"
+      id: input_intlt_stbycompass_on_shifter_apu_2_6
+      event_type: 0x03
+      module: 2
+      channel: 6
+      press_only: true
+    - name: "INTLT STBYCOMPASS OFF"
+      id: input_intlt_stbycompass_off_shifter_apu_2_5
+      event_type: 0x03
+      module: 2
+      channel: 5
+      press_only: true
+    - name: "INTLT DOME BRT"
+      id: input_intlt_dome_brt_shifter_apu_2_14
+      event_type: 0x03
+      module: 2
+      channel: 14
+      press_only: false
+    - name: "INTLT DOME OFF"
+      id: input_intlt_dome_off_shifter_apu_2_15
+      event_type: 0x03
+      module: 2
+      channel: 15
+      press_only: false
+    - name: "INTLT ANNLT TEST"
+      id: input_intlt_annlt_test_shifter_apu_2_28
+      event_type: 0x03
+      module: 2
+      channel: 28
+      press_only: false
+    - name: "INTLT ANNLT DIM"
+      id: input_intlt_annlt_dim_shifter_apu_2_29
+      event_type: 0x03
+      module: 2
+      channel: 29
+      press_only: false
+    - name: "SIGNS SEARBELTS ON"
+      id: input_signs_searbelts_on_shifter_apu_2_23
+      event_type: 0x03
+      module: 2
+      channel: 23
+      press_only: true
+    - name: "SIGNS SEARBELTS OFF"
+      id: input_signs_searbelts_off_shifter_apu_2_12
+      event_type: 0x03
+      module: 2
+      channel: 12
+      press_only: true
+    - name: "SIGNS NO SMOKING ON"
+      id: input_signs_no_smoking_on_shifter_apu_2_21
+      event_type: 0x03
+      module: 2
+      channel: 21
+      press_only: false
+    - name: "SIGNS NO SMOKING OFF"
+      id: input_signs_no_smoking_off_shifter_apu_2_22
+      event_type: 0x03
+      module: 2
+      channel: 22
+      press_only: false
+    - name: "SIGNS  ON"
+      id: input_signs_on_shifter_apu_2_30
+      event_type: 0x03
+      module: 2
+      channel: 30
+      press_only: false
+    - name: "SIGNS  OFF"
+      id: input_signs_off_shifter_apu_2_31
+      event_type: 0x03
+      module: 2
+      channel: 31
+      press_only: false
+    - name: "ANTICE WING"
+      id: input_antice_wing_shifter_apu_25
+      event_type: 0x03
+      module: 1
+      channel: 25
+      press_only: false
+    - name: "ANTICE ENG1"
+      id: input_antice_eng1_shifter_apu_7
+      event_type: 0x03
+      module: 1
+      channel: 7
+      press_only: false
+    - name: "ANTICE ENG2"
+      id: input_antice_eng2_shifter_apu_28
+      event_type: 0x03
+      module: 1
+      channel: 28
+      press_only: false
+    - name: "WINDOWS HEAT"
+      id: input_windows_heat_shifter_apu_2_7
+      event_type: 0x03
+      module: 2
+      channel: 7
+      press_only: false
+    - name: "DITCHING"
+      id: input_ditching_shifter_apu_2_19
+      event_type: 0x03
+      module: 2
+      channel: 19
+      press_only: false
+    - name: "MANVS UP [Shifter APU 2 25]"
+      id: input_manvs_up_shifter_apu_2_25
+      event_type: 0x03
+      module: 2
+      channel: 25
+      press_only: false
+    - name: "MANVS UP [Shifter APU 2 24]"
+      id: input_manvs_up_shifter_apu_2_24
+      event_type: 0x03
+      module: 2
+      channel: 24
+      press_only: false
+    - name: "MODESEL"
+      id: input_modesel_shifter_apu_2_4
+      event_type: 0x03
+      module: 2
+      channel: 4
+      press_only: false
+    - name: "AIRCOND PACK FLOW LO"
+      id: input_aircond_pack_flow_lo_shifter_apu_8
+      event_type: 0x03
+      module: 1
+      channel: 8
+      press_only: true
+    - name: "AIRCOND PACK FLOW NORM"
+      id: input_aircond_pack_flow_norm_shifter_apu_9
+      event_type: 0x03
+      module: 1
+      channel: 9
+      press_only: true
+    - name: "AIRCOND PACK FLOW HI"
+      id: input_aircond_pack_flow_hi_shifter_apu_16
+      event_type: 0x03
+      module: 1
+      channel: 16
+      press_only: true
+    - name: "AIRCOND PACK1"
+      id: input_aircond_pack1_shifter_apu_17
+      event_type: 0x03
+      module: 1
+      channel: 17
+      press_only: false
+    - name: "AIRCOND ENG1BLEED"
+      id: input_aircond_eng1bleed_shifter_apu_18
+      event_type: 0x03
+      module: 1
+      channel: 18
+      press_only: false
+    - name: "AIRCOND RAMAIR"
+      id: input_aircond_ramair_shifter_apu_19
+      event_type: 0x03
+      module: 1
+      channel: 19
+      press_only: false
+    - name: "AIRCOND APUBLEED"
+      id: input_aircond_apubleed_shifter_apu_24
+      event_type: 0x03
+      module: 1
+      channel: 24
+      press_only: false
+    - name: "AIRCOND XBLEED SHUT"
+      id: input_aircond_xbleed_shut_shifter_apu_2_0
+      event_type: 0x03
+      module: 2
+      channel: 0
+      press_only: false
+    - name: "AIRCOND XBLEED  AUTO"
+      id: input_aircond_xbleed_auto_shifter_apu_2_1
+      event_type: 0x03
+      module: 2
+      channel: 1
+      press_only: false
+    - name: "AIRCOND XBLEED  OPEN"
+      id: input_aircond_xbleed_open_shifter_apu_2_2
+      event_type: 0x03
+      module: 2
+      channel: 2
+      press_only: false
+    - name: "AIRCOND ENG2BLEED"
+      id: input_aircond_eng2bleed_shifter_apu_2_16
+      event_type: 0x03
+      module: 2
+      channel: 16
+      press_only: false
+    - name: "AIRCOND PACK2"
+      id: input_aircond_pack2_shifter_apu_2_18
+      event_type: 0x03
+      module: 2
+      channel: 18
+      press_only: false
+    - name: "AIRCOND HOTAIR"
+      id: input_aircond_hotair_shifter_apu_2_17
+      event_type: 0x03
+      module: 2
+      channel: 17
+      press_only: false
+    - name: "ELEC COMMERCIAL"
+      id: input_elec_commercial_shifter_apu_3
+      event_type: 0x03
+      module: 1
+      channel: 3
+      press_only: false
+    - name: "ELEC GALY"
+      id: input_elec_galy_shifter_apu_11
+      event_type: 0x03
+      module: 1
+      channel: 11
+      press_only: false
+    - name: "ELEC IDG"
+      id: input_elec_idg_shifter_apu_10
+      event_type: 0x03
+      module: 1
+      channel: 10
+      press_only: false
+    - name: "ELEC GEN1"
+      id: input_elec_gen1_inputshifter_9
+      event_type: 0x03
+      module: 0
+      channel: 9
+      press_only: false
+    - name: "ELEC APUGEN"
+      id: input_elec_apugen_inputshifter_27
+      event_type: 0x03
+      module: 0
+      channel: 27
+      press_only: false
+    - name: "ELEC BUSTIE"
+      id: input_elec_bustie_inputshifter_28
+      event_type: 0x03
+      module: 0
+      channel: 28
+      press_only: false
+    - name: "ELEC GEN2"
+      id: input_elec_gen2_inputshifter_12
+      event_type: 0x03
+      module: 0
+      channel: 12
+      press_only: false
+    - name: "ELEC IDG2"
+      id: input_elec_idg2_inputshifter_23
+      event_type: 0x03
+      module: 0
+      channel: 23
+      press_only: false
+    - name: "ELEC ACESS"
+      id: input_elec_acess_inputshifter_21
+      event_type: 0x03
+      module: 0
+      channel: 21
+      press_only: false
+    - name: "ELEC BAT1"
+      id: input_elec_bat1_inputshifter_20
+      event_type: 0x03
+      module: 0
+      channel: 20
+      press_only: false
+    - name: "ELEC BAT2"
+      id: input_elec_bat2_inputshifter_29
+      event_type: 0x03
+      module: 0
+      channel: 29
+      press_only: false
+    - name: "FUEL LTK1"
+      id: input_fuel_ltk1_shifter_apu_2
+      event_type: 0x03
+      module: 1
+      channel: 2
+      press_only: false
+    - name: "FUEL LTK2"
+      id: input_fuel_ltk2_inputshifter_0
+      event_type: 0x03
+      module: 0
+      channel: 0
+      press_only: false
+    - name: "FUEL CTR1"
+      id: input_fuel_ctr1_inputshifter_1
+      event_type: 0x03
+      module: 0
+      channel: 1
+      press_only: false
+    - name: "FUEL CTR2"
+      id: input_fuel_ctr2_inputshifter_3
+      event_type: 0x03
+      module: 0
+      channel: 3
+      press_only: false
+    - name: "FUEL CTRMODESEL"
+      id: input_fuel_ctrmodesel_inputshifter_2
+      event_type: 0x03
+      module: 0
+      channel: 2
+      press_only: false
+    - name: "FUEL RTK1"
+      id: input_fuel_rtk1_inputshifter_10
+      event_type: 0x03
+      module: 0
+      channel: 10
+      press_only: false
+    - name: "FUEL RTK2"
+      id: input_fuel_rtk2_inputshifter_8
+      event_type: 0x03
+      module: 0
+      channel: 8
+      press_only: false
+    - name: "FUEL XFEED"
+      id: input_fuel_xfeed_inputshifter_6
+      event_type: 0x03
+      module: 0
+      channel: 6
+      press_only: false
+    - name: "HYD GREENENG1"
+      id: input_hyd_greeneng1_shifter_apu_1
+      event_type: 0x03
+      module: 1
+      channel: 1
+      press_only: false
+    - name: "HYD RATMAN"
+      id: input_hyd_ratman_inputshifter_7
+      event_type: 0x03
+      module: 0
+      channel: 7
+      press_only: false
+    - name: "HYD BLUEELEC"
+      id: input_hyd_blueelec_inputshifter_5
+      event_type: 0x03
+      module: 0
+      channel: 5
+      press_only: false
+    - name: "HYD PTU"
+      id: input_hyd_ptu_inputshifter_4
+      event_type: 0x03
+      module: 0
+      channel: 4
+      press_only: false
+    - name: "HYD YELLOWENG2"
+      id: input_hyd_yelloweng2_inputshifter_14
+      event_type: 0x03
+      module: 0
+      channel: 14
+      press_only: false
+    - name: "WIPER OFF"
+      id: input_wiper_off_multiplexer_1_2
+      event_type: 0x04
+      module: 1
+      channel: 2
+      press_only: true
+    - name: "HYD YELLOPUMP"
+      id: input_hyd_yellopump_inputshifter_13
+      event_type: 0x03
+      module: 0
+      channel: 13
+      press_only: false
+    - name: "FIRE ENG1 AGENT1"
+      id: input_fire_eng1_agent1_multiplexer_0
+      event_type: 0x04
+      module: 0
+      channel: 0
+      press_only: false
+    - name: "FIRE ENG1 AGENT2"
+      id: input_fire_eng1_agent2_multiplexer_15
+      event_type: 0x04
+      module: 0
+      channel: 15
+      press_only: false
+    - name: "FIRE ENG2 AGENT1"
+      id: input_fire_eng2_agent1_multiplexer_14
+      event_type: 0x04
+      module: 0
+      channel: 14
+      press_only: false
+    - name: "FIRE ENG2 AGENT2"
+      id: input_fire_eng2_agent2_multiplexer_13
+      event_type: 0x04
+      module: 0
+      channel: 13
+      press_only: false
+    - name: "FIRE APU AGENT"
+      id: input_fire_apu_agent_multiplexer_8
+      event_type: 0x04
+      module: 0
+      channel: 8
+      press_only: false
+    - name: "FIRE FIRE1 PUSH"
+      id: input_fire_fire1_push_multiplexer_2
+      event_type: 0x04
+      module: 0
+      channel: 2
+      press_only: false
+    - name: "FIRE FIRE2 PUSH"
+      id: input_fire_fire2_push_multiplexer_11
+      event_type: 0x04
+      module: 0
+      channel: 11
+      press_only: false
+    - name: "FIRE APU PUSH"
+      id: input_fire_apu_push_multiplexer_10
+      event_type: 0x04
+      module: 0
+      channel: 10
+      press_only: false
+    - name: "WIPER SLOW"
+      id: input_wiper_slow_multiplexer_1_3
+      event_type: 0x04
+      module: 1
+      channel: 3
+      press_only: true
+    - name: "WIPER FAST"
+      id: input_wiper_fast_multiplexer_1_4
+      event_type: 0x04
+      module: 1
+      channel: 4
+      press_only: true
+    - name: "RAINRPLNT"
+      id: input_rainrplnt_multiplexer_1_1
+      event_type: 0x04
+      module: 1
+      channel: 1
+      press_only: false
+    - name: "CALLS MECH"
+      id: input_calls_mech_multiplexer_1_0
+      event_type: 0x04
+      module: 1
+      channel: 0
+      press_only: false
+    - name: "CALLS ALL"
+      id: input_calls_all_multiplexer_1_12
+      event_type: 0x04
+      module: 1
+      channel: 12
+      press_only: false
+    - name: "CALLS FWD"
+      id: input_calls_fwd_multiplexer_1_13
+      event_type: 0x04
+      module: 1
+      channel: 13
+      press_only: false
+    - name: "CALLS AFT"
+      id: input_calls_aft_multiplexer_1_14
+      event_type: 0x04
+      module: 1
+      channel: 14
+      press_only: false
+    - name: "CALLS EMER"
+      id: input_calls_emer_multiplexer_1_15
+      event_type: 0x04
+      module: 1
+      channel: 15
+      press_only: false
+    - name: "OXYGEN MASK"
+      id: input_oxygen_mask_multiplexer_1_10
+      event_type: 0x04
+      module: 1
+      channel: 10
+      press_only: false
+    - name: "OXYGEN CREW"
+      id: input_oxygen_crew_multiplexer_1_8
+      event_type: 0x04
+      module: 1
+      channel: 8
+      press_only: false
+    - name: "RCDR GNDCTL"
+      id: input_rcdr_gndctl_multiplexer_1_5
+      event_type: 0x04
+      module: 1
+      channel: 5
+      press_only: false
+    - name: "RCDR CVRERASE"
+      id: input_rcdr_cvrerase_multiplexer_1_6
+      event_type: 0x04
+      module: 1
+      channel: 6
+      press_only: false
+    - name: "RCDR CVRTEST"
+      id: input_rcdr_cvrtest_multiplexer_1_7
+      event_type: 0x04
+      module: 1
+      channel: 7
+      press_only: false
+    - name: "GPWS TERR"
+      id: input_gpws_terr_shifter_left_28
+      event_type: 0x03
+      module: 3
+      channel: 28
+      press_only: false
+    - name: "GPWS SYS"
+      id: input_gpws_sys_shifter_left_29
+      event_type: 0x03
+      module: 3
+      channel: 29
+      press_only: false
+    - name: "GPWS GSMODE"
+      id: input_gpws_gsmode_shifter_left_0
+      event_type: 0x03
+      module: 3
+      channel: 0
+      press_only: false
+    - name: "GPWS FLAPMODE"
+      id: input_gpws_flapmode_shifter_left_4
+      event_type: 0x03
+      module: 3
+      channel: 4
+      press_only: false
+    - name: "GPWS LDGFLAP3"
+      id: input_gpws_ldgflap3_shifter_left_15
+      event_type: 0x03
+      module: 3
+      channel: 15
+      press_only: false
+    - name: "EMERELECPWR EMERGENTEST"
+      id: input_emerelecpwr_emergentest_shifter_left_14
+      event_type: 0x03
+      module: 3
+      channel: 14
+      press_only: false
+    - name: "EMERELECPWR GEN1LINE"
+      id: input_emerelecpwr_gen1line_shifter_left_13
+      event_type: 0x03
+      module: 3
+      channel: 13
+      press_only: false
+    - name: "EMERELECPWR EMERGEN"
+      id: input_emerelecpwr_emergen_shifter_left_23
+      event_type: 0x03
+      module: 3
+      channel: 23
+      press_only: false
+    - name: "EVAC COMMAND"
+      id: input_evac_command_shifter_left_31
+      event_type: 0x03
+      module: 3
+      channel: 31
+      press_only: false
+    - name: "EVAC HORNSHUT"
+      id: input_evac_hornshut_shifter_left_20
+      event_type: 0x03
+      module: 3
+      channel: 20
+      press_only: false
+    - name: "EVAC PURS PURS"
+      id: input_evac_purs_purs_shifter_left_22
+      event_type: 0x03
+      module: 3
+      channel: 22
+      press_only: true
+    - name: "EVAC CAPT"
+      id: input_evac_capt_shifter_left_21
+      event_type: 0x03
+      module: 3
+      channel: 21
+      press_only: false
+    - name: "FLTCTL ELAC1"
+      id: input_fltctl_elac1_shifter_left_5
+      event_type: 0x03
+      module: 3
+      channel: 5
+      press_only: false
+    - name: "FLTCTL SEC1"
+      id: input_fltctl_sec1_shifter_left_6
+      event_type: 0x03
+      module: 3
+      channel: 6
+      press_only: false
+    - name: "FLTCTL FAC1"
+      id: input_fltctl_fac1_shifter_left_7
+      event_type: 0x03
+      module: 3
+      channel: 7
+      press_only: false
+    - name: "ADIRS ADR1"
+      id: input_adirs_adr1_shifter_left_1
+      event_type: 0x03
+      module: 3
+      channel: 1
+      press_only: false
+    - name: "ADIRS ADR3"
+      id: input_adirs_adr3_shifter_left_11
+      event_type: 0x03
+      module: 3
+      channel: 11
+      press_only: false
+    - name: "ADIRS ADR2"
+      id: input_adirs_adr2_shifter_left_10
+      event_type: 0x03
+      module: 3
+      channel: 10
+      press_only: false
+    - name: "ADIRS IR1 OFF"
+      id: input_adirs_ir1_off_shifter_left_9
+      event_type: 0x03
+      module: 3
+      channel: 9
+      press_only: true
+    - name: "ADIRS IR1 NAV"
+      id: input_adirs_ir1_nav_shifter_left_19
+      event_type: 0x03
+      module: 3
+      channel: 19
+      press_only: true
+    - name: "FO WIPER OFF"
+      id: input_fo_wiper_off_shifter_right_11
+      event_type: 0x03
+      module: 4
+      channel: 11
+      press_only: true
+    - name: "ADIRS IR1 ATT"
+      id: input_adirs_ir1_att_shifter_left_24
+      event_type: 0x03
+      module: 3
+      channel: 24
+      press_only: true
+    - name: "ADIRS IR3 OFF"
+      id: input_adirs_ir3_off_shifter_left_26
+      event_type: 0x03
+      module: 3
+      channel: 26
+      press_only: true
+    - name: "ADIRS IR3 NAV"
+      id: input_adirs_ir3_nav_shifter_left_25
+      event_type: 0x03
+      module: 3
+      channel: 25
+      press_only: true
+    - name: "ADIRS IR3 ATT"
+      id: input_adirs_ir3_att_shifter_left_27
+      event_type: 0x03
+      module: 3
+      channel: 27
+      press_only: true
+    - name: "ADIRS IR2 NAV"
+      id: input_adirs_ir2_nav_shifter_left_16
+      event_type: 0x03
+      module: 3
+      channel: 16
+      press_only: true
+    - name: "ADIRS IR2 ATT"
+      id: input_adirs_ir2_att_shifter_left_18
+      event_type: 0x03
+      module: 3
+      channel: 18
+      press_only: true
+    - name: "ADIRS IR2 OFF"
+      id: input_adirs_ir2_off_shifter_left_17
+      event_type: 0x03
+      module: 3
+      channel: 17
+      press_only: true
+    - name: "ADIRS IR3"
+      id: input_adirs_ir3_shifter_left_3
+      event_type: 0x03
+      module: 3
+      channel: 3
+      press_only: false
+    - name: "ADIRS IR1"
+      id: input_adirs_ir1_shifter_left_8
+      event_type: 0x03
+      module: 3
+      channel: 8
+      press_only: false
+    - name: "FO WIPER SLOW [Shifter RIGHT 9]"
+      id: input_fo_wiper_slow_shifter_right_9
+      event_type: 0x03
+      module: 4
+      channel: 9
+      press_only: true
+    - name: "FO WIPER SLOW [Shifter RIGHT 10]"
+      id: input_fo_wiper_slow_shifter_right_10
+      event_type: 0x03
+      module: 4
+      channel: 10
+      press_only: true
+    - name: "FO RAIN RPLNT"
+      id: input_fo_rain_rplnt_shifter_right_16
+      event_type: 0x03
+      module: 4
+      channel: 16
+      press_only: false
+    - name: "FO ENG MANSTART 1"
+      id: input_fo_eng_manstart_1_shifter_right_17
+      event_type: 0x03
+      module: 4
+      channel: 17
+      press_only: false
+    - name: "FO ENG MANSTART 2"
+      id: input_fo_eng_manstart_2_shifter_right_18
+      event_type: 0x03
+      module: 4
+      channel: 18
+      press_only: false
+    - name: "FO VENTILATION BLOWER"
+      id: input_fo_ventilation_blower_shifter_right_7
+      event_type: 0x03
+      module: 4
+      channel: 7
+      press_only: true
+    - name: "FO VENTILATION EXTRACT"
+      id: input_fo_ventilation_extract_shifter_right_24
+      event_type: 0x03
+      module: 4
+      channel: 24
+      press_only: false
+    - name: "VENTILATION"
+      id: input_ventilation_shifter_right_19
+      event_type: 0x03
+      module: 4
+      channel: 19
+      press_only: false
+    - name: "FO VENTILATION CABFANS"
+      id: input_fo_ventilation_cabfans_shifter_right_25
+      event_type: 0x03
+      module: 4
+      channel: 25
+      press_only: false
+    - name: "FO CARGOSMOKE TEST"
+      id: input_fo_cargosmoke_test_shifter_right_20
+      event_type: 0x03
+      module: 4
+      channel: 20
+      press_only: false
+    - name: "FO CARGOSMOKE AGENT1 L"
+      id: input_fo_cargosmoke_agent1_l_shifter_right_30
+      event_type: 0x03
+      module: 4
+      channel: 30
+      press_only: false
+    - name: "FO CARGOSMOKE AGENT2 L"
+      id: input_fo_cargosmoke_agent2_l_shifter_right_29
+      event_type: 0x03
+      module: 4
+      channel: 29
+      press_only: false
+    - name: "FO CARGOSMOKE AGENT1 R"
+      id: input_fo_cargosmoke_agent1_r_shifter_right_27
+      event_type: 0x03
+      module: 4
+      channel: 27
+      press_only: false
+    - name: "FO CARGOSMOKE AGENT2 R"
+      id: input_fo_cargosmoke_agent2_r_shifter_right_26
+      event_type: 0x03
+      module: 4
+      channel: 26
+      press_only: false
+    - name: "FO FLTCTL ELAC2"
+      id: input_fo_fltctl_elac2_shifter_right_0
+      event_type: 0x03
+      module: 4
+      channel: 0
+      press_only: false
+    - name: "FO FLTCTL SEC2"
+      id: input_fo_fltctl_sec2_shifter_right_1
+      event_type: 0x03
+      module: 4
+      channel: 1
+      press_only: false
+    - name: "FO FLTCTL SEC3"
+      id: input_fo_fltctl_sec3_shifter_right_2
+      event_type: 0x03
+      module: 4
+      channel: 2
+      press_only: false
+    - name: "FO FLTCTL FAC2"
+      id: input_fo_fltctl_fac2_shifter_right_3
+      event_type: 0x03
+      module: 4
+      channel: 3
+      press_only: false
+    - name: "FO FLTCTL CARGOHEAT HOT"
+      id: input_fo_fltctl_cargoheat_hot_shifter_right_23
+      event_type: 0x03
+      module: 4
+      channel: 23
+      press_only: false
+    - name: "FO FLTCTL CARGOHEAT ISOL"
+      id: input_fo_fltctl_cargoheat_isol_shifter_right_22
+      event_type: 0x03
+      module: 4
+      channel: 22
+      press_only: false
+    - name: "OXYGEN HIGH ALT"
+      id: input_oxygen_high_alt_multiplexer_1_11
+      event_type: 0x04
+      module: 1
+      channel: 11
+      press_only: false
+  analog_inputs:
+    - name: "LIGHT Position"
+      id: analog_light
+      module: 0
+      raw_sensor:
+        name: "LIGHT Raw"
+        id: analog_light_raw
+    - name: "LDGELEV Position"
+      id: analog_ldgelev
+      module: 1
+      raw_sensor:
+        name: "LDGELEV Raw"
+        id: analog_ldgelev_raw
+    - name: "AIRCOND COCKPIT Position"
+      id: analog_aircond_cockpit
+      module: 2
+      raw_sensor:
+        name: "AIRCOND COCKPIT Raw"
+        id: analog_aircond_cockpit_raw
+    - name: "AIRCOND FWDCABIN Position"
+      id: analog_aircond_fwdcabin
+      module: 3
+      raw_sensor:
+        name: "AIRCOND FWDCABIN Raw"
+        id: analog_aircond_fwdcabin_raw
+    - name: "AIRCOND AFTCABIN Position"
+      id: analog_aircond_aftcabin
+      module: 4
+      raw_sensor:
+        name: "AIRCOND AFTCABIN Raw"
+        id: analog_aircond_aftcabin_raw
+    - name: "FO FLTCTL CARGOHEAT AFT Position"
+      id: analog_fo_fltctl_cargoheat_aft
+      module: 5
+      raw_sensor:
+        name: "FO FLTCTL CARGOHEAT AFT Raw"
+        id: analog_fo_fltctl_cargoheat_aft_raw
+  digital_outputs:
+    - name: "ADIRS Output"
+      id: output_adirs_shift_left_0
+      event_type: 0x06
+      module: 0
+      channel: 0
+    - name: "IR1 FAULT Output"
+      id: output_ir1_fault_shift_left_9
+      event_type: 0x06
+      module: 0
+      channel: 9
+    - name: "IR2 OFF Output"
+      id: output_ir2_off_shift_left_1
+      event_type: 0x06
+      module: 0
+      channel: 1
+    - name: "IR2 FAULT Output"
+      id: output_ir2_fault_shift_left_2
+      event_type: 0x06
+      module: 0
+      channel: 2
+    - name: "IR3 FAULT Output"
+      id: output_ir3_fault_shift_left_3
+      event_type: 0x06
+      module: 0
+      channel: 3
+    - name: "FAC1 FAULT Output"
+      id: output_fac1_fault_shift_left_4
+      event_type: 0x06
+      module: 0
+      channel: 4
+    - name: "SEC1 FAULT Output"
+      id: output_sec1_fault_shift_left_5
+      event_type: 0x06
+      module: 0
+      channel: 5
+    - name: "ELAC1 FAULT Output"
+      id: output_elac1_fault_shift_left_6
+      event_type: 0x06
+      module: 0
+      channel: 6
+    - name: "TERR OFF Output"
+      id: output_terr_off_shift_left_7
+      event_type: 0x06
+      module: 0
+      channel: 7
+    - name: "IR3 OFF Output"
+      id: output_ir3_off_shift_left_8
+      event_type: 0x06
+      module: 0
+      channel: 8
+    - name: "IR1 OFF Output"
+      id: output_ir1_off_shift_left_10
+      event_type: 0x06
+      module: 0
+      channel: 10
+    - name: "RAT EMER GEN Output"
+      id: output_rat_emer_gen_shift_left_11
+      event_type: 0x06
+      module: 0
+      channel: 11
+    - name: "GND CTL Output"
+      id: output_gnd_ctl_shift_left_12
+      event_type: 0x06
+      module: 0
+      channel: 12
+    - name: "FAC1 OFF Output"
+      id: output_fac1_off_shift_left_13
+      event_type: 0x06
+      module: 0
+      channel: 13
+    - name: "SEC1 OFF Output"
+      id: output_sec1_off_shift_left_14
+      event_type: 0x06
+      module: 0
+      channel: 14
+    - name: "ELAC OFF Output"
+      id: output_elac_off_shift_left_15
+      event_type: 0x06
+      module: 0
+      channel: 15
+    - name: "GSMODE Output"
+      id: output_gsmode_shift_left_16
+      event_type: 0x06
+      module: 0
+      channel: 16
+    - name: "FLAP MODE Output"
+      id: output_flap_mode_shift_left_17
+      event_type: 0x06
+      module: 0
+      channel: 17
+    - name: "GEN2 OFF [Shift LEFT 18] Output"
+      id: output_gen2_off_shift_left_18
+      event_type: 0x06
+      module: 0
+      channel: 18
+    - name: "SYS FAULT Output"
+      id: output_sys_fault_shift_left_19
+      event_type: 0x06
+      module: 0
+      channel: 19
+    - name: "ADR3 FAULT Output"
+      id: output_adr3_fault_shift_left_20
+      event_type: 0x06
+      module: 0
+      channel: 20
+    - name: "ADR3 OFF Output"
+      id: output_adr3_off_shift_left_21
+      event_type: 0x06
+      module: 0
+      channel: 21
+    - name: "ADR1 FAULT Output"
+      id: output_adr1_fault_shift_left_22
+      event_type: 0x06
+      module: 0
+      channel: 22
+    - name: "ADR1 OFF Output"
+      id: output_adr1_off_shift_left_23
+      event_type: 0x06
+      module: 0
+      channel: 23
+    - name: "SYS OFF Output"
+      id: output_sys_off_shift_left_24
+      event_type: 0x06
+      module: 0
+      channel: 24
+    - name: "GEN1LINE FAULT Output"
+      id: output_gen1line_fault_shift_left_25
+      event_type: 0x06
+      module: 0
+      channel: 25
+    - name: "GEN1LINE OFF Output"
+      id: output_gen1line_off_shift_left_26
+      event_type: 0x06
+      module: 0
+      channel: 26
+    - name: "COMMAND EVAC Output"
+      id: output_command_evac_shift_left_27
+      event_type: 0x06
+      module: 0
+      channel: 27
+    - name: "COMMAND ON Output"
+      id: output_command_on_shift_left_28
+      event_type: 0x06
+      module: 0
+      channel: 28
+    - name: "TERR FAULT Output"
+      id: output_terr_fault_shift_left_29
+      event_type: 0x06
+      module: 0
+      channel: 29
+    - name: "ADR2 OFF Output"
+      id: output_adr2_off_shift_left_30
+      event_type: 0x06
+      module: 0
+      channel: 30
+    - name: "ADR2 FAULT Output"
+      id: output_adr2_fault_shift_left_31
+      event_type: 0x06
+      module: 0
+      channel: 31
+    - name: "APUSTART AVAIL Output"
+      id: output_apustart_avail_shift_apu_0
+      event_type: 0x06
+      module: 3
+      channel: 0
+    - name: "APUMASTER ON Output"
+      id: output_apumaster_on_shift_apu_1
+      event_type: 0x06
+      module: 3
+      channel: 1
+    - name: "APUMASTER FAULT Output"
+      id: output_apumaster_fault_shift_apu_2
+      event_type: 0x06
+      module: 3
+      channel: 2
+    - name: "APUSTART ON Output"
+      id: output_apustart_on_shift_apu_3
+      event_type: 0x06
+      module: 3
+      channel: 3
+    - name: "PACK1 OFF Output"
+      id: output_pack1_off_shift_apu_4
+      event_type: 0x06
+      module: 3
+      channel: 4
+    - name: "PACK1 FAULT Output"
+      id: output_pack1_fault_shift_apu_5
+      event_type: 0x06
+      module: 3
+      channel: 5
+    - name: "ENGBLEED1 OFF Output"
+      id: output_engbleed1_off_shift_apu_6
+      event_type: 0x06
+      module: 3
+      channel: 6
+    - name: "ENGBLEED1 FAULT Output"
+      id: output_engbleed1_fault_shift_apu_7
+      event_type: 0x06
+      module: 3
+      channel: 7
+    - name: "EXIT BUTTON Output"
+      id: output_exit_button_shift_apu_8
+      event_type: 0x06
+      module: 3
+      channel: 8
+    - name: "GEN1 FAULT Output"
+      id: output_gen1_fault_shift_apu_9
+      event_type: 0x06
+      module: 3
+      channel: 9
+    - name: "EXTPOWER ON Output"
+      id: output_extpower_on_shift_apu_11
+      event_type: 0x06
+      module: 3
+      channel: 11
+    - name: "RAMAIR OFF Output"
+      id: output_ramair_off_shift_apu_12
+      event_type: 0x06
+      module: 3
+      channel: 12
+    - name: "APUBLEED ON Output"
+      id: output_apubleed_on_shift_apu_13
+      event_type: 0x06
+      module: 3
+      channel: 13
+    - name: "APUBLEED FAULT Output"
+      id: output_apubleed_fault_shift_apu_14
+      event_type: 0x06
+      module: 3
+      channel: 14
+    - name: "ENG2BLEED OFF Output"
+      id: output_eng2bleed_off_shift_apu_15
+      event_type: 0x06
+      module: 3
+      channel: 15
+    - name: "IDG2 FAULT Output"
+      id: output_idg2_fault_shift_apu_10
+      event_type: 0x06
+      module: 3
+      channel: 10
+    - name: "GEN1 OFF Output"
+      id: output_gen1_off_shift_apu_16
+      event_type: 0x06
+      module: 3
+      channel: 16
+    - name: "GEN2 FAULT Output"
+      id: output_gen2_fault_shift_apu_17
+      event_type: 0x06
+      module: 3
+      channel: 17
+    - name: "GEN2 OFF [Shift APU 18] Output"
+      id: output_gen2_off_shift_apu_18
+      event_type: 0x06
+      module: 3
+      channel: 18
+    - name: "HOTAIR FAULT Output"
+      id: output_hotair_fault_shift_apu_19
+      event_type: 0x06
+      module: 3
+      channel: 19
+    - name: "ENG2BLEED FAULT Output"
+      id: output_eng2bleed_fault_shift_apu_20
+      event_type: 0x06
+      module: 3
+      channel: 20
+    - name: "PACK2 OFF Output"
+      id: output_pack2_off_shift_apu_21
+      event_type: 0x06
+      module: 3
+      channel: 21
+    - name: "PACK2 FAULT Output"
+      id: output_pack2_fault_shift_apu_22
+      event_type: 0x06
+      module: 3
+      channel: 22
+    - name: "WINDOWSHEAT ON Output"
+      id: output_windowsheat_on_shift_apu_23
+      event_type: 0x06
+      module: 3
+      channel: 23
+    - name: "DITCHING OFF Output"
+      id: output_ditching_off_shift_apu_24
+      event_type: 0x06
+      module: 3
+      channel: 24
+    - name: "MODESEL FAULT Output"
+      id: output_modesel_fault_shift_apu_25
+      event_type: 0x06
+      module: 3
+      channel: 25
+    - name: "MODESEL OFF Output"
+      id: output_modesel_off_shift_apu_26
+      event_type: 0x06
+      module: 3
+      channel: 26
+    - name: "ICEENG1 FAULT Output"
+      id: output_iceeng1_fault_shift_apu_27
+      event_type: 0x06
+      module: 3
+      channel: 27
+    - name: "ICEENG1 ON Output"
+      id: output_iceeng1_on_shift_apu_28
+      event_type: 0x06
+      module: 3
+      channel: 28
+    - name: "ICEENG2 FAULT Output"
+      id: output_iceeng2_fault_shift_apu_29
+      event_type: 0x06
+      module: 3
+      channel: 29
+    - name: "ICEENG2 ON Output"
+      id: output_iceeng2_on_shift_apu_30
+      event_type: 0x06
+      module: 3
+      channel: 30
+    - name: "HOTAIR OFF Output"
+      id: output_hotair_off_shift_apu_31
+      event_type: 0x06
+      module: 3
+      channel: 31
+    - name: "BACKLIGHT Output"
+      id: output_backlight_backlight_0
+      event_type: 0x02
+      module: 0
+      channel: 0
+    - name: "CALLEMER OFF Output"
+      id: output_callemer_off_shift_center_0
+      event_type: 0x06
+      module: 2
+      channel: 0
+    - name: "CREWSUPPLY OFF Output"
+      id: output_crewsupply_off_shift_center_1
+      event_type: 0x06
+      module: 2
+      channel: 1
+    - name: "OXYGEN PASS Output"
+      id: output_oxygen_pass_shift_center_2
+      event_type: 0x06
+      module: 2
+      channel: 2
+    - name: "HIGH ALT LANDING Output"
+      id: output_high_alt_landing_shift_center_3
+      event_type: 0x06
+      module: 2
+      channel: 3
+    - name: "ACESS OFF Output"
+      id: output_acess_off_shift_center_4
+      event_type: 0x06
+      module: 2
+      channel: 4
+    - name: "ACESS FAULT Output"
+      id: output_acess_fault_shift_center_5
+      event_type: 0x06
+      module: 2
+      channel: 5
+    - name: "RTKPUMP 2 FAULT Output"
+      id: output_rtkpump_2_fault_shift_center_6
+      event_type: 0x06
+      module: 2
+      channel: 6
+    - name: "RTKPUMP 1 FAULT Output"
+      id: output_rtkpump_1_fault_shift_center_7
+      event_type: 0x06
+      module: 2
+      channel: 7
+    - name: "WING ON Output"
+      id: output_wing_on_shift_center_8
+      event_type: 0x06
+      module: 2
+      channel: 8
+    - name: "WING FAULT Output"
+      id: output_wing_fault_shift_center_9
+      event_type: 0x06
+      module: 2
+      channel: 9
+    - name: "LTKPUMP 2 FAULT Output"
+      id: output_ltkpump_2_fault_shift_center_10
+      event_type: 0x06
+      module: 2
+      channel: 10
+    - name: "BAT1 FAULT [Shift CENTER 11] Output"
+      id: output_bat1_fault_shift_center_11
+      event_type: 0x06
+      module: 2
+      channel: 11
+    - name: "CTRTKPUMP2 FAULT Output"
+      id: output_ctrtkpump2_fault_shift_center_12
+      event_type: 0x06
+      module: 2
+      channel: 12
+    - name: "CTRTKMODESEL FAULT Output"
+      id: output_ctrtkmodesel_fault_shift_center_13
+      event_type: 0x06
+      module: 2
+      channel: 13
+    - name: "CTRTKPUMP1 FAULT Output"
+      id: output_ctrtkpump1_fault_shift_center_14
+      event_type: 0x06
+      module: 2
+      channel: 14
+    - name: "RTKPUMP2 OFF Output"
+      id: output_rtkpump2_off_shift_center_15
+      event_type: 0x06
+      module: 2
+      channel: 15
+    - name: "BAT1 FAULT [Shift CENTER 16] Output"
+      id: output_bat1_fault_shift_center_16
+      event_type: 0x06
+      module: 2
+      channel: 16
+    - name: "BAT2 FAULT Output"
+      id: output_bat2_fault_shift_center_17
+      event_type: 0x06
+      module: 2
+      channel: 17
+    - name: "BAT2 OFF Output"
+      id: output_bat2_off_shift_center_18
+      event_type: 0x06
+      module: 2
+      channel: 18
+    - name: "APUGEN OFF Output"
+      id: output_apugen_off_shift_center_19
+      event_type: 0x06
+      module: 2
+      channel: 19
+    - name: "RTKPUMP1 OFF Output"
+      id: output_rtkpump1_off_shift_center_20
+      event_type: 0x06
+      module: 2
+      channel: 20
+    - name: "CTRTKPUMP2 OFF Output"
+      id: output_ctrtkpump2_off_shift_center_21
+      event_type: 0x06
+      module: 2
+      channel: 21
+    - name: "CTRTKMODESEL MAN Output"
+      id: output_ctrtkmodesel_man_shift_center_22
+      event_type: 0x06
+      module: 2
+      channel: 22
+    - name: "CTRTKPUMP1 OFF Output"
+      id: output_ctrtkpump1_off_shift_center_23
+      event_type: 0x06
+      module: 2
+      channel: 23
+    - name: "BUSTIE OFF Output"
+      id: output_bustie_off_shift_center_24
+      event_type: 0x06
+      module: 2
+      channel: 24
+    - name: "EMER CALL Output"
+      id: output_emer_call_shift_center_25
+      event_type: 0x06
+      module: 2
+      channel: 25
+    - name: "ELEC IDG1 Output"
+      id: output_elec_idg1_shift_center_26
+      event_type: 0x06
+      module: 2
+      channel: 26
+    - name: "EXTPWR AVAUL Output"
+      id: output_extpwr_avaul_shift_center_27
+      event_type: 0x06
+      module: 2
+      channel: 27
+    - name: "APUGEN FAULT Output"
+      id: output_apugen_fault_shift_center_28
+      event_type: 0x06
+      module: 2
+      channel: 28
+    - name: "ELECPUMPBLUE OFF Output"
+      id: output_elecpumpblue_off_shift_center_29
+      event_type: 0x06
+      module: 2
+      channel: 29
+    - name: "ELECPUMPBLUE FAULT Output"
+      id: output_elecpumpblue_fault_shift_fire_14
+      event_type: 0x06
+      module: 4
+      channel: 14
+    - name: "XFEED OPEN Output"
+      id: output_xfeed_open_shift_center_30
+      event_type: 0x06
+      module: 2
+      channel: 30
+    - name: "XFEED ON Output"
+      id: output_xfeed_on_shift_center_31
+      event_type: 0x06
+      module: 2
+      channel: 31
+    - name: "ENGMANSTART1 ON Output"
+      id: output_engmanstart1_on_shift_right_0
+      event_type: 0x06
+      module: 1
+      channel: 0
+    - name: "ENGMANSTART2 ON Output"
+      id: output_engmanstart2_on_shift_right_1
+      event_type: 0x06
+      module: 1
+      channel: 1
+    - name: "BLOWER OVRD Output"
+      id: output_blower_ovrd_shift_right_2
+      event_type: 0x06
+      module: 1
+      channel: 2
+    - name: "BLOWER FAULT Output"
+      id: output_blower_fault_shift_right_3
+      event_type: 0x06
+      module: 1
+      channel: 3
+    - name: "CARGOHOTAIR OFF Output"
+      id: output_cargohotair_off_shift_right_4
+      event_type: 0x06
+      module: 1
+      channel: 4
+    - name: "CARGOHOTAIR FAULT Output"
+      id: output_cargohotair_fault_shift_right_5
+      event_type: 0x06
+      module: 1
+      channel: 5
+    - name: "AFTISOL OFF Output"
+      id: output_aftisol_off_shift_right_6
+      event_type: 0x06
+      module: 1
+      channel: 6
+    - name: "AFTISOL FAULT Output"
+      id: output_aftisol_fault_shift_right_7
+      event_type: 0x06
+      module: 1
+      channel: 7
+    - name: "EXREACT OVRD Output"
+      id: output_exreact_ovrd_shift_right_8
+      event_type: 0x06
+      module: 1
+      channel: 8
+    - name: "EXREACT FAULT Output"
+      id: output_exreact_fault_shift_right_9
+      event_type: 0x06
+      module: 1
+      channel: 9
+    - name: "CARGO SMOKE DISCH2 Output"
+      id: output_cargo_smoke_disch2_shift_right_10
+      event_type: 0x06
+      module: 1
+      channel: 10
+    - name: "CARGO SMOKE DISCH1 Output"
+      id: output_cargo_smoke_disch1_shift_right_11
+      event_type: 0x06
+      module: 1
+      channel: 11
+    - name: "ELAC2 OFF Output"
+      id: output_elac2_off_shift_right_12
+      event_type: 0x06
+      module: 1
+      channel: 12
+    - name: "ELAC2 FAULT Output"
+      id: output_elac2_fault_shift_right_13
+      event_type: 0x06
+      module: 1
+      channel: 13
+    - name: "SEC2 OFF Output"
+      id: output_sec2_off_shift_right_14
+      event_type: 0x06
+      module: 1
+      channel: 14
+    - name: "SEC2 FAULT Output"
+      id: output_sec2_fault_shift_right_15
+      event_type: 0x06
+      module: 1
+      channel: 15
+    - name: "CABFANS OFF Output"
+      id: output_cabfans_off_shift_right_16
+      event_type: 0x06
+      module: 1
+      channel: 16
+    - name: "CARGO SMOKE DISCHARGE AGENT 2 Output"
+      id: output_cargo_smoke_discharge_agent_2_shift_right_17
+      event_type: 0x06
+      module: 1
+      channel: 17
+    - name: " Output"
+      id: output__shift_right_18
+      event_type: 0x06
+      module: 1
+      channel: 18
+    - name: "CARGO SMOKE AFT Output"
+      id: output_cargo_smoke_aft_shift_right_19
+      event_type: 0x06
+      module: 1
+      channel: 19
+    - name: "CARGO SMOKE FWD Output"
+      id: output_cargo_smoke_fwd_shift_right_30
+      event_type: 0x06
+      module: 1
+      channel: 30
+    - name: "SEC3 OFF Output"
+      id: output_sec3_off_shift_right_20
+      event_type: 0x06
+      module: 1
+      channel: 20
+    - name: "SEC3 FAULT Output"
+      id: output_sec3_fault_shift_right_21
+      event_type: 0x06
+      module: 1
+      channel: 21
+    - name: "FAC2 OFF Output"
+      id: output_fac2_off_shift_right_22
+      event_type: 0x06
+      module: 1
+      channel: 22
+    - name: "FAC2 FAULT Output"
+      id: output_fac2_fault_shift_right_23
+      event_type: 0x06
+      module: 1
+      channel: 23
+    - name: "AGENT2 SQUIB Output"
+      id: output_agent2_squib_shift_fire_2
+      event_type: 0x06
+      module: 4
+      channel: 2
+    - name: "AGENT2 DISCH Output"
+      id: output_agent2_disch_shift_fire_3
+      event_type: 0x06
+      module: 4
+      channel: 3
+    - name: "ELECPUMP FAULT Output"
+      id: output_elecpump_fault_shift_fire_4
+      event_type: 0x06
+      module: 4
+      channel: 4
+    - name: "ELECPUMP ON Output"
+      id: output_elecpump_on_shift_fire_5
+      event_type: 0x06
+      module: 4
+      channel: 5
+    - name: "ENG2PUMP FAULT Output"
+      id: output_eng2pump_fault_shift_fire_6
+      event_type: 0x06
+      module: 4
+      channel: 6
+    - name: "ENG2PUMP OFF Output"
+      id: output_eng2pump_off_shift_fire_7
+      event_type: 0x06
+      module: 4
+      channel: 7
+    - name: "ENG2 AGENT1 SQUIB Output"
+      id: output_eng2_agent1_squib_shift_fire_8
+      event_type: 0x06
+      module: 4
+      channel: 8
+    - name: "ENG2 AGENT1 DISCH Output"
+      id: output_eng2_agent1_disch_shift_fire_9
+      event_type: 0x06
+      module: 4
+      channel: 9
+    - name: "ENG1PUMP OFF Output"
+      id: output_eng1pump_off_shift_fire_20
+      event_type: 0x06
+      module: 4
+      channel: 20
+    - name: "APU AGENT SQUIB Output"
+      id: output_apu_agent_squib_shift_fire_10
+      event_type: 0x06
+      module: 4
+      channel: 10
+    - name: "APU AGENT DISCH Output"
+      id: output_apu_agent_disch_shift_fire_11
+      event_type: 0x06
+      module: 4
+      channel: 11
+    - name: "PTU FAULT Output"
+      id: output_ptu_fault_shift_fire_12
+      event_type: 0x06
+      module: 4
+      channel: 12
+    - name: "PTU OFF Output"
+      id: output_ptu_off_shift_fire_13
+      event_type: 0x06
+      module: 4
+      channel: 13
+    - name: "ENG1PUMP FAULT Output"
+      id: output_eng1pump_fault_shift_fire_15
+      event_type: 0x06
+      module: 4
+      channel: 15
+    - name: "ENG1 AGENT2 SQUIB Output"
+      id: output_eng1_agent2_squib_shift_fire_16
+      event_type: 0x06
+      module: 4
+      channel: 16
+    - name: "ENG1 AGENT2 DISCH Output"
+      id: output_eng1_agent2_disch_shift_fire_17
+      event_type: 0x06
+      module: 4
+      channel: 17
+    - name: "ENG1 AGENT1 SQUIB Output"
+      id: output_eng1_agent1_squib_shift_fire_18
+      event_type: 0x06
+      module: 4
+      channel: 18
+    - name: "ENG1 AGENT1 DISCH Output"
+      id: output_eng1_agent1_disch_shift_fire_19
+      event_type: 0x06
+      module: 4
+      channel: 19
+    - name: "LTKPUMP2 OFF Output"
+      id: output_ltkpump2_off_shift_fire_21
+      event_type: 0x06
+      module: 4
+      channel: 21
+    - name: "GALY FAULT Output"
+      id: output_galy_fault_shift_fire_22
+      event_type: 0x06
+      module: 4
+      channel: 22
+    - name: "LTKPUMP1 FAULT Output"
+      id: output_ltkpump1_fault_shift_fire_23
+      event_type: 0x06
+      module: 4
+      channel: 23
+    - name: "FIRE2 LED Output"
+      id: output_fire2_led_shift_fire_26
+      event_type: 0x06
+      module: 4
+      channel: 26
+    - name: "APU LED Output"
+      id: output_apu_led_shift_fire_27
+      event_type: 0x06
+      module: 4
+      channel: 27
+    - name: "FIRE1 LED Output"
+      id: output_fire1_led_shift_fire_28
+      event_type: 0x06
+      module: 4
+      channel: 28
+    - name: "COMMERCIAL Output"
+      id: output_commercial_shift_fire_29
+      event_type: 0x06
+      module: 4
+      channel: 29
+    - name: "LTKPUMP1 OFF Output"
+      id: output_ltkpump1_off_shift_fire_30
+      event_type: 0x06
+      module: 4
+      channel: 30
+    - name: "GALY OFF Output"
+      id: output_galy_off_shift_fire_31
+      event_type: 0x06
+      module: 4
+      channel: 31
+    - name: "DOME LIGHT Output"
+      id: output_dome_light_led_light_1
+      event_type: 0x02
+      module: 0
+      channel: 1
+    - name: "CKPT DOOR CTL UPPER Output"
+      id: output_ckpt_door_ctl_upper_shift_fire_24
+      event_type: 0x06
+      module: 4
+      channel: 24
+    - name: "CKPT DOOR CTL DOWNER Output"
+      id: output_ckpt_door_ctl_downer_shift_fire_25
+      event_type: 0x06
+      module: 4
+      channel: 25
+    - name: "BAT V Output"
+      id: output_bat_v_ledv_2
+      event_type: 0x02
+      module: 0
+      channel: 2
+    - name: "STORBR LIGHT Output"
+      id: output_storbr_light_white_strobe_3
+      event_type: 0x02
+      module: 0
+      channel: 3
+    - name: "LOGO Output"
+      id: output_logo_green_led_red_led_4
+      event_type: 0x02
+      module: 0
+      channel: 4
+    - name: "RWY Output"
+      id: output_rwy_whtie_rwy_5
+      event_type: 0x02
+      module: 0
+      channel: 5
+    - name: "NOSE Output"
+      id: output_nose_white_nose_6
+      event_type: 0x02
+      module: 0
+      channel: 6

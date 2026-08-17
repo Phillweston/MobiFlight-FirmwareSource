@@ -34,6 +34,22 @@ If you still receive an error then [enable long paths support in Windows](https:
    suggest this extension if you don't already have it installed.
 3. From the Command Palette select `PlatformIO: Build` to build or `PlatformIO: Upload` to build and upload to your connected board
 
+On Windows, the A320 Arduino Mega firmware can also be built and flashed with
+one PowerShell command. The defaults are `mobiflight_mega` and `COM22`:
+
+```powershell
+.\build_and_flash_arduino.ps1
+```
+
+Use another serial port or supported AVR board environment when required:
+
+```powershell
+.\build_and_flash_arduino.ps1 -Port COM8 -Environment mobiflight_mega
+```
+
+Close MobiFlight Connector and any serial monitor before flashing so they do
+not hold the serial port open.
+
 If you want to speed up local development and only build for one of the supported platforms then click on the `Default (MobiFlight-FirmwareSource)` label
 in the Visual Studio Code status bar and then select the specific target platform you want to build for.
 
